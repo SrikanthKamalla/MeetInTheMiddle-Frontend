@@ -1,12 +1,57 @@
-# React + Vite
+# Meet in the Middle (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A location-based web application that helps users find a convenient **midpoint location** between multiple addresses, making it easier to plan meetups with friends, family, or colleagues.  
+Built with **React**, **Redux Toolkit**, **Google Maps API**, and styled using **TailwindCSS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔑 **Authentication & Validation**  
+  - JWT-based login & signup (integrated with backend)  
+  - Form handling with **React Hook Form** + **Zod validation**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📍 **Location & Maps**  
+  - Address search & autocomplete powered by **Google Places API**  
+  - Displays midpoint location on an interactive **Google Map**  
+  - Suggests nearby cafes, restaurants, and landmarks
+
+- 🗺️ **Meeting Point Suggestions**  
+  - Calculates midpoint using distance algorithms  
+  - Allows saving and sharing meeting points with others  
+
+- 💬 **Real-Time Interaction**  
+  - **Socket.io** integration for live updates and notifications  
+  - Confetti 🎉 for successful meetup planning  
+
+- 🎨 **User Experience**  
+  - Responsive UI with **TailwindCSS** and **Framer Motion** animations  
+  - Toast notifications for feedback (`react-toastify`)  
+  - Error handling with **React Error Boundary**  
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:**  
+- ⚛️ React 19  
+- 🗂 Redux Toolkit (state management)  
+- 🎨 TailwindCSS + Framer Motion (UI/UX)  
+- 📍 @react-google-maps/api (maps integration)  
+- ⚡ Socket.io-client (real-time communication)  
+- ✅ React Hook Form + Zod (form handling & validation)  
+- 📅 React Datepicker & Date-fns (time/date utilities)  
+
+**Tooling & Dev Experience:**  
+- Vite (bundler)  
+- ESLint + Prettier (code quality & formatting)  
+
+---
+
+## 📦 Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YourUsername/meet-in-the-middle-client.git
+cd meet-in-the-middle-client
