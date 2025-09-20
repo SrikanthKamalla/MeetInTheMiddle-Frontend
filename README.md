@@ -1,4 +1,5 @@
 # Meet in the Middle (Frontend)
+<a href="https://github.com/SrikanthKamalla/MeetInTheMiddle-Backend">MeetInTheMiddle-Backend</a>
 
 A location-based web application that helps users find a convenient **midpoint location** between multiple addresses, making it easier to plan meetups with friends, family, or colleagues.  
 Built with **React**, **Redux Toolkit**, **Google Maps API**, and styled using **TailwindCSS**.
