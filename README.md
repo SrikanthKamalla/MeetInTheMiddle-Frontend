@@ -20,10 +20,6 @@ Built with **React**, **Redux Toolkit**, **Google Maps API**, and styled using *
   - Calculates midpoint using distance algorithms  
   - Allows saving and sharing meeting points with others  
 
-- 💬 **Real-Time Interaction**  
-  - **Socket.io** integration for live updates and notifications  
-  - Confetti 🎉 for successful meetup planning  
-
 - 🎨 **User Experience**  
   - Responsive UI with **TailwindCSS** and **Framer Motion** animations  
   - Toast notifications for feedback (`react-toastify`)  
@@ -53,5 +49,5 @@ Built with **React**, **Redux Toolkit**, **Google Maps API**, and styled using *
 Clone the repository:
 
 ```bash
-git clone https://github.com/YourUsername/meet-in-the-middle-client.git
-cd meet-in-the-middle-client
+git clone https://github.com/YourUsername/meMeetInTheMiddle-Frontend.git
+cd MeetInTheMiddle-Frontend
