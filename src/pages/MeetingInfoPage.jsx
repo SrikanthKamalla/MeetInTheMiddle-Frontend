@@ -41,6 +41,7 @@ import { useNavigate } from "react-router-dom";
 const MeetingsInfoPage = () => {
   const [showDeclineModal, setShowDeclineModal] = useState(false);
   const [meeting, setMeeting] = useState({});
+  console.log(meeting)
   const [currentWindow, setcurrentWindow] = useState(0);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const { id } = useParams();
@@ -510,14 +511,14 @@ const MeetingsInfoPage = () => {
                         </p>
                       </div>
                     </div>
-                    {participant.status === "accepted" ? (
+                    {participant.status === "Accepted" ? (
                       <div className="text-green-600 font-semibold flex flex-col items-end">
                         <p>Location provided</p>
                         <div className="flex items-center gap-1 text-green-500">
                           <FaCheckCircle /> Confirmed
                         </div>
                       </div>
-                    ) : participant.status === "pending" ? (
+                    ) : participant.status === "Pending" ? (
                       <div className="text-yellow-600 font-semibold flex flex-col items-end">
                         <p>Location pending</p>
                         <div className="flex items-center gap-1 text-yellow-500">
@@ -684,6 +685,7 @@ const MeetingsInfoPage = () => {
                   </div>
                 )}
               </div>
+              <MapContainer meeting={meeting}/>
 
               {/* Modal for selecting places */}
               {placesModalOpen && (

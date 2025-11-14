@@ -13,7 +13,6 @@ const Landingpage = () => {
       <Howitworks />
       <Testimonials />
       <Footer />
-      
     </>
   );
 };
