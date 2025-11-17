@@ -4,7 +4,6 @@ import { Suspense, lazy, useEffect, useState } from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import MeetingsInfoPage from "./pages/MeetingInfoPage.jsx";
 import MyErrorBoundary from "./components/error-boundary/ErrorBoundary.jsx";
-import NetworkWatcher from "./components/error-boundary/NetwrokWatcher.jsx";
 import PageNotFound from "./components/error-boundary/PageNotFound.jsx";
 import ServerError from "./components/error-boundary/ServerError.jsx";
 

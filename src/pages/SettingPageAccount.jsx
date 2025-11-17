@@ -7,7 +7,7 @@ import {
   deleteUserAccount,
   generateUserReport,
 } from "../services/userSettings";
-import { replace, useNavigate, useParams } from "react-router-dom";
+import { replace, useNavigate } from "react-router-dom";
 import { sendChangePasswordMail } from "../services/authentication";
 import { generateMeetingsReport } from "../services/meetings";
 

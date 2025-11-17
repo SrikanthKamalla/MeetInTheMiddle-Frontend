@@ -154,13 +154,13 @@ const SignUp = () => {
           </button>
 
           {/* Facebook Button */}
-          <button
+          {/* <button
             onClick={handleFbOAuth}
             className="w-full flex items-center justify-center space-x-2 border border-gray-300 rounded-lg px-4 py-2.5 font-semibold text-gray-700 bg-gray-50 hover:bg-gray-100 transition-colors duration-200"
           >
             <FaFacebook size={20} className="text-blue-600" />
             <span>Continue with Facebook</span>
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

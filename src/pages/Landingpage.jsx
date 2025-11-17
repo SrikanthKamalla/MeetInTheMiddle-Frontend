@@ -1,20 +1,20 @@
 import React from "react";
-import HeroSection from "../components/landingpage-components/HeroSection";
-import FeaturesSection from "../components/landingpage-components/FeaturesSection";
-import Howitworks from "../components/landingpage-components/Howitworks";
-import Testimonials from "../components/landingpage-components/Testimonials";
-import Footer from "../components/landingpage-components/Footer";
+import HeroSection from "../components/landingPage/HeroSection";
+import FeaturesSection from "../components/landingPage/FeaturesSection";
+import Testimonials from "../components/landingPage/Testimonials";
+import Footer from "../components/landingPage/Footer";
+import HowItWorks from "../components/landingPage/HowItWorks";
 
-const Landingpage = () => {
+const LandingPage = () => {
   return (
     <>
       <HeroSection />
       <FeaturesSection />
-      <Howitworks />
+      <HowItWorks />
       <Testimonials />
       <Footer />
     </>
   );
 };
 
-export default Landingpage;
+export default LandingPage;

@@ -11,7 +11,6 @@ const WithAuth = ({ children }) => {
   const dispatch = useDispatch();
   const { authenticated, user } = useSelector((store) => store.authSlice);
 
-  // Only initialize socket after user exists
   const userId = user?.id;
 
   useSocket(userId, (notification) => {
@@ -20,8 +19,7 @@ const WithAuth = ({ children }) => {
 
 
   useEffect(() => {
-    let isMounted = true; // ✅ prevent state updates if component unmounts
-
+    let isMounted = true; 
     const checkAuth = async () => {
       try {
         const user = await getUserData();

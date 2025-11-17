@@ -5,7 +5,7 @@ import { LuTarget } from "react-icons/lu";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 
-const Howitworks = () => {
+const HowItWorks = () => {
   const steps = [
     {
       icon: <FaRegCalendarAlt />,
@@ -77,4 +77,4 @@ const Howitworks = () => {
   );
 };
 
-export default Howitworks;
+export default HowItWorks;

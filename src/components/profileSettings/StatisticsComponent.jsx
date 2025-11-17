@@ -1,5 +1,5 @@
 import React from "react";
-import InfoCard from "../InfoCard";
+import InfoCard from "../../components/dashboard/InfoCard.jsx";
 import { FaRegCheckCircle, FaRegStar, FaUsers } from "react-icons/fa";
 
 const StatisticsComponent = () => {

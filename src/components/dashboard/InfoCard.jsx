@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const InfoCard = ({ updates }) => {
+  console.log(updates)
   return (
     <div>
       {/* {card components} */}

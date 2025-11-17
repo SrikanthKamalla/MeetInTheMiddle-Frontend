@@ -139,9 +139,7 @@ const Navbar = () => {
                 {user.name.slice(0, 2).toUpperCase()}
               </div>
             )}
-            <span className="text-sm font-medium hidden sm:inline">
-              {user.name.toUpperCase()}
-            </span>
+           
           </motion.button>
 
           {/* Mobile Menu Toggle */}

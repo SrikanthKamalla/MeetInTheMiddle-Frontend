@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { BiEdit } from "react-icons/bi";
 import { MdOutlineLocationOn } from "react-icons/md";
-import ProfileUpdateForm from "../components/profileSettings-components/ProfileUpdateForm";
-import MeetingHitoryCompnent from "../components/profileSettings-components/MeetingHitoryCompnent";
-import StatisticsComponent from "../components/profileSettings-components/StatisticsComponent";
+import ProfileUpdateForm from "../components/profileSettings/ProfileUpdateForm";
+import MeetingHitoryCompnent from "../components/profileSettings/MeetingHitoryCompnent";
+import StatisticsComponent from "../components/profileSettings/StatisticsComponent";
 import { FaRegUser, FaTrash, FaTrashAlt } from "react-icons/fa";
 import { CiCalendar } from "react-icons/ci";
 import { FaRegStar } from "react-icons/fa";
@@ -55,6 +55,7 @@ const ProfileSettingsPage = () => {
     reader.onloadend = () => void setPreview(reader);
     reader.readAsDataURL(image);
     formImageData.append("image", image);
+    console.log(reader)
   };
 
   async function updateUserInfo() {
@@ -69,6 +70,7 @@ const ProfileSettingsPage = () => {
         phone: formDataUnderEdit.phoneNumber,
       });
       const imageRes = await uploadAvatar(formImageData);
+      console.log(imageRes)
       setFormDataUnderEdit((p) => ({
         ...p,
         avatar: imageRes.data.data.cloudinary.url,
@@ -83,6 +85,8 @@ const ProfileSettingsPage = () => {
       setPreview(null);
     }
   }
+
+
   async function getUserInfo() {
     try {
       const res = await getUserProfileInfo();
