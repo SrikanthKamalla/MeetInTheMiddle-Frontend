@@ -4,8 +4,11 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import MeetingForm from "../../pages/MeetingForm";
 
 const MeetingInfo = forwardRef(({ meetingData, setMeetingData }, ref) => {
+  console.log("fdasdf",new Date(meetingData.info?.startDate).getTime());
+  console.log("---------",Date.now());
   const schema = z
     .object({
       title: z.string().min(3, "Meeting title must be at least 3 characters"),
@@ -48,6 +51,7 @@ const MeetingInfo = forwardRef(({ meetingData, setMeetingData }, ref) => {
       return await trigger();
     },
   }));
+  
 
   return (
     <div className="max-w-2xl mx-auto p-4 md:p-6">
@@ -132,6 +136,7 @@ const MeetingInfo = forwardRef(({ meetingData, setMeetingData }, ref) => {
                       dateFormat="MMMM d, yyyy h:mm aa"
                       placeholderText="Select start date & time"
                       className="w-full px-4 py-3 text-gray-700 bg-transparent outline-none rounded-lg"
+                      minDate={Date.now()}
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                       <svg
@@ -197,6 +202,7 @@ const MeetingInfo = forwardRef(({ meetingData, setMeetingData }, ref) => {
                       dateFormat="MMMM d, yyyy h:mm aa"
                       placeholderText="Select end date & time"
                       className="w-full px-4 py-3 text-gray-700 bg-transparent outline-none rounded-lg"
+                      minDate={meetingData.info?.startDate || Date.now()}
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                       <svg
