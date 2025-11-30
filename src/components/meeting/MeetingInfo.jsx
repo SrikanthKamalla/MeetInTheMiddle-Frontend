@@ -1,14 +1,10 @@
-import React, { useEffect, forwardRef, useImperativeHandle } from "react";
+import React, { useEffect, forwardRef, useImperativeHandle, useRef } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import MeetingForm from "../../pages/MeetingForm";
 
 const MeetingInfo = forwardRef(({ meetingData, setMeetingData }, ref) => {
-  console.log("fdasdf",new Date(meetingData.info?.startDate).getTime());
-  console.log("---------",Date.now());
   const schema = z
     .object({
       title: z.string().min(3, "Meeting title must be at least 3 characters"),
@@ -51,7 +47,9 @@ const MeetingInfo = forwardRef(({ meetingData, setMeetingData }, ref) => {
       return await trigger();
     },
   }));
-  
+
+const startDateRef = useRef(null);
+const endDateRef = useRef(null);  
 
   return (
     <div className="max-w-2xl mx-auto p-4 md:p-6">
@@ -123,10 +121,12 @@ const MeetingInfo = forwardRef(({ meetingData, setMeetingData }, ref) => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Start Date & Time <span className="text-red-500">*</span>
                   </label>
-                  <div
-                    className={`relative ${errors.startDate ? "border-red-300" : "border-gray-300"} border rounded-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500`}
+                   <div
+                    onClick={() => startDateRef.current?.setFocus()}
+                    className={`flex items-center justify-center ${errors.startDate ? "border-red-300" : "border-gray-300"} border rounded-lg focus-within:ring-1 focus-within:ring-blue-500 focus-within:border-blue-500`}
                   >
                     <DatePicker
+                    ref={startDateRef}
                       selected={field.value ?? null}
                       onChange={(date) => field.onChange(date)}
                       showTimeSelect
@@ -137,8 +137,9 @@ const MeetingInfo = forwardRef(({ meetingData, setMeetingData }, ref) => {
                       placeholderText="Select start date & time"
                       className="w-full px-4 py-3 text-gray-700 bg-transparent outline-none rounded-lg"
                       minDate={Date.now()}
+                      onClick={(e) => e.stopPropagation()}
                     />
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                    <div>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5 text-gray-400"
@@ -190,9 +191,11 @@ const MeetingInfo = forwardRef(({ meetingData, setMeetingData }, ref) => {
                     End Date & Time <span className="text-red-500">*</span>
                   </label>
                   <div
-                    className={`relative ${errors.endDate ? "border-red-300" : "border-gray-300"} border rounded-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500`}
+                  onClick={() => endDateRef.current?.setFocus()}
+                    className={`flex items-center justify-center ${errors.startDate ? "border-red-300" : "border-gray-300"} border rounded-lg focus-within:ring-1 focus-within:ring-blue-500 focus-within:border-blue-500`}
                   >
                     <DatePicker
+                     ref={endDateRef}
                       selected={field.value ?? null}
                       onChange={(date) => field.onChange(date)}
                       showTimeSelect
@@ -203,8 +206,9 @@ const MeetingInfo = forwardRef(({ meetingData, setMeetingData }, ref) => {
                       placeholderText="Select end date & time"
                       className="w-full px-4 py-3 text-gray-700 bg-transparent outline-none rounded-lg"
                       minDate={meetingData.info?.startDate || Date.now()}
+                      onClick={(e) => e.stopPropagation()}
                     />
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                    <div>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5 text-gray-400"

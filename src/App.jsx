@@ -6,6 +6,7 @@ import MeetingsInfoPage from "./pages/MeetingInfoPage.jsx";
 import MyErrorBoundary from "./components/error-boundary/ErrorBoundary.jsx";
 import PageNotFound from "./components/error-boundary/PageNotFound.jsx";
 import ServerError from "./components/error-boundary/ServerError.jsx";
+import "react-datepicker/dist/react-datepicker.css";
 
 import ForgotPassword from "./pages/ForgotPassword.jsx";
 import ResetPassword from "./pages/ResetPassword.jsx";
