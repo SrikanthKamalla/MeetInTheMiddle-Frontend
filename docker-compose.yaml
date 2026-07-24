@@ -1,0 +1,13 @@
+services:
+  react-app:
+    build: .
+    container_name: MITM
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    tty: true
